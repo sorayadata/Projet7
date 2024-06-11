@@ -14,7 +14,7 @@ flavors:
     sklearn_version: 1.2.2
 mlflow_version: 2.12.2
 model_size_bytes: 90660279
-model_uuid: 063975d2527e4dc39fc400324e976894
+model_uuid: 6879ffbbba194efa8d2f61e9ad4a5a10
 signature:
   inputs: '[{"type": "long", "name": "CODE_GENDER", "required": true}, {"type": "long",
     "name": "FLAG_OWN_CAR", "required": true}, {"type": "long", "name": "FLAG_OWN_REALTY",
@@ -537,4 +537,4 @@ signature:
     "INSTAL_COUNT", "required": true}]'
   outputs: '[{"type": "long", "name": "TARGET", "required": true}]'
   params: null
-utc_time_created: '2024-06-10 15:54:39.113477'
+utc_time_created: '2024-06-11 18:39:12.489938'
