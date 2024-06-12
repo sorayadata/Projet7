@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 from PIL import Image
 
 # url_api = 'http://localhost:5000'  # local API
-url_api = "http://13.38.29.238:5000" # online API
+url_api = "http://15.236.141.52:5000" # online API
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
@@ -47,7 +47,7 @@ def main():
             response.raise_for_status()
             client_data = response.json()
             proba = client_data['proba_1'] * 100
-            plot_risk(proba, treshold=50)
+            plot_risk(proba, treshold=54)
         except requests.exceptions.RequestException as e:
             st.error(f"Erreur lors de la récupération des données du client : {e}")
             return
@@ -120,6 +120,7 @@ def plot_hist(data, client_value, title, xlabel, ylabel='count', divisor=1):
     plt.ylabel(ylabel, fontsize=12)
     st.pyplot()
 
+
 def plot_risk(proba, treshold=10, max_val=None):
     if max_val is None:
         max_val = treshold * 2
@@ -147,7 +148,9 @@ def plot_risk(proba, treshold=10, max_val=None):
     ))
 
     fig.update_layout(paper_bgcolor="white", font={'color': "darkblue", 'family': "Arial"})
-    st.plotly_chart(fig)
+    st.plotly_chart(fig) 
+    
+   
 
 @st.cache_data()
 def load_client_info(client_id):
